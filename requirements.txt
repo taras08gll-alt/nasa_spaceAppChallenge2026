@@ -1,0 +1,8 @@
+# Python 3.11+ recommended (Docker uses Python 3.12).
+Flask>=3.1,<4
+numpy>=1.26,<3
+spiceypy>=6,<9
+scipy>=1.11,<2
+requests>=2.31,<3
+tifffile>=2024.2
+Gunicorn>=23,<26

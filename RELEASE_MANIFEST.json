@@ -1,0 +1,43 @@
+{
+  "source": "LUNA_SPICULUM_APOLLO_ARTEMIS_FULL_SOURCE.zip",
+  "changed_existing_files": [
+    "backend/calculation.py",
+    "backend/mission_markers.json",
+    "backend/mission_markers.py",
+    "frontend/css/interaction-help.css",
+    "frontend/css/mission-markers.css",
+    "frontend/css/style.css",
+    "frontend/index.html",
+    "frontend/js/cesium.js",
+    "frontend/js/mission-markers.js",
+    "frontend/js/script.js",
+    "frontend/public/mission-markers.json"
+  ],
+  "added_files": [
+    "DEPLOY_APOLLO_ARTEMIS_UA.md",
+    "VERIFY_LUNA_RELEASE.py",
+    "frontend/public/luna-favicon.svg",
+    "frontend/public/luna-logo.svg"
+  ],
+  "removed_or_renamed_files": [],
+  "new_mission_count": 9,
+  "historic_count": 6,
+  "future_count": 3,
+  "source_build_verified": false,
+  "reason": "offline npm ci cannot retrieve vite-plugin-static-copy",
+  "update": "Historical mission touchdown UTC selections",
+  "changed_existing_files_this_update": [
+    "backend/mission_markers.json",
+    "frontend/public/mission-markers.json",
+    "backend/mission_markers.py",
+    "frontend/js/mission-markers.js",
+    "frontend/js/cesium.js",
+    "frontend/js/script.js",
+    "frontend/index.html"
+  ],
+  "new_files_this_update": [
+    "DEPLOY_MISSION_TIMES_UA.md"
+  ],
+  "build_verified": false,
+  "validation": "JS syntax, Python syntax, API parser (Flask stub), sample UTC timeline alignment"
+}

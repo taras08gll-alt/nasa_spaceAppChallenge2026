@@ -1,0 +1,29 @@
+# Example Nginx vhost for a VPS using Gunicorn directly OR Docker Compose.
+# Replace your existing site's `location /api/` handling with this proxy.
+# Set server_name and root paths to the real values on your server.
+# If using Docker Compose, Nginx can proxy ALL traffic to Flask; then root is not required.
+server {
+    listen 80;
+    server_name YOUR_DOMAIN.example;
+
+    # Existing HTTPS/TLS vhost can instead use these SAME `location` blocks.
+    location /api/ {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 180s;
+    }
+
+    # Flask also serves the built front-end for simpler deployment.
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 180s;
+    }
+
+    # If existing Nginx already serves /moon-terrain/, /moon-tiles-32k/
+    # or /moon-hillshade/ as static directories, KEEP those location blocks.
+}

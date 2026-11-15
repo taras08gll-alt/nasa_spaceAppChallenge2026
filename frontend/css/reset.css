@@ -1,0 +1,73 @@
+/* LUNA-DOC: Basic browser style reset for consistent spacing and box sizing. */
+/* Reset default spacing and element sizes. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+/* LUNA-DOC: Styles for selector body. */
+body {
+  height: 100%;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* LUNA-DOC: Styles for selector body. */
+body {
+  min-height: 100vh;
+}
+
+/* Reset list styles. */
+ul,
+/* LUNA-DOC: Styles for selector ol. */
+ol {
+  list-style: none;
+}
+
+/* Reset link styles. */
+/* LUNA-DOC: Styles for selector a. */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Image and media defaults. */
+img,
+picture,
+video,
+canvas,
+/* LUNA-DOC: Styles for selector svg. */
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Forms and buttons inherit fonts. */
+input,
+button,
+textarea,
+/* LUNA-DOC: Styles for selector select. */
+select {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+/* LUNA-DOC: Common buttons and hover/pressed states. */
+button {
+  cursor: pointer;
+}
+
+/* Optionally normalize heading and paragraph font sizes. */
+/* LUNA-DOC: Styles for selector h1, h2, h3, h4, h5, h6, p. */
+h1, h2, h3, h4, h5, h6, p {
+  font-weight: inherit;
+  font-size: inherit;
+}

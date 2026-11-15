@@ -1,0 +1,48 @@
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+backend/venv/
+
+# Node.js
+node_modules/
+dist/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Large scientific datasets
+backend/kernels/
+frontend/img/lroc_color_16bit_srgb_8k.png
+
+# Temporary files
+*.log
+.DS_Store
+
+# Backups
+luna-spiculum*backup-*
+moon-advanced-backup-*
+*.tar
+*.tar.gz
+*.zip
+
+# Virtual environments
+venv/
+.venv/
+
+# Dependencies and builds
+node_modules/
+dist/
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem

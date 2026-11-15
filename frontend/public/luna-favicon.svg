@@ -1,0 +1,31 @@
+<!-- LUNA-DOC: Векторна favicon-вкладки; браузер завантажує його з frontend/public після збірки. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="iconLumen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E0F2FE" />
+      <stop offset="50%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+
+    <filter id="iconSoftLumen" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Темний фон фавікона -->
+  <rect width="64" height="64" rx="14" fill="#0B0F19" />
+
+  <!-- Мінімалістичний спис -->
+  <g transform="translate(17, 13)" filter="url(#iconSoftLumen)">
+    <!-- Наконечник -->
+    <polygon points="15,0 30,22 15,17 0,22" fill="url(#iconLumen)" />
+    <!-- Поперечина -->
+    <line x1="5" y1="26" x2="25" y2="26" stroke="#BAE6FD" stroke-width="2" stroke-linecap="round" />
+    <!-- Древко -->
+    <line x1="15" y1="16" x2="15" y2="38" stroke="url(#iconLumen)" stroke-width="2.5" stroke-linecap="round" />
+  </g>
+</svg>

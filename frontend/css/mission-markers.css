@@ -1,0 +1,39 @@
+/* LUNA-DOC: Styles for mission tooltips and small colored markers, not Cesium geometry. */
+/* LUNA-DOC: Mission information card styles. */
+.mission-marker-popup {
+  position: fixed;
+  z-index: 999;
+  width: min(350px, calc(100vw - 24px));
+  max-height: min(75vh, 440px);
+  overflow: auto;
+  border: 1px solid rgba(255, 181, 77, .62);
+  border-radius: 15px;
+  padding: 14px 17px;
+  color: #edf1f7;
+  background: rgba(18, 22, 31, .97);
+  box-shadow: 0 12px 38px rgba(0,0,0,.5);
+  font: 12px/1.5 Inter, system-ui, sans-serif;
+  pointer-events: none;
+}
+.mission-marker-popup[hidden] {display:none !important;}
+.mission-marker-popup h3 {font-size:17px;color:#ffce8b;margin:0 0 5px;}
+.mission-marker-popup > div {margin:5px 0;}
+.mission-marker-popup strong {color:#d8dfe8;}
+.mission-marker-popup p {margin:8px 0 0;line-height:1.5;}
+.mission-marker-status {font-size:10px;padding:2px 7px;border-radius:8px;color:#a4ffc1;background:#17352b;}
+.mission-marker-status--planned {color:#a8e4ff;background:#173449;}
+.mission-marker-source {display:block;overflow-wrap:anywhere;margin-top:8px;color:#98abc3;font-size:10px;}
+
+/* Completed red; planned blue, consistent with pins. */
+.mission-marker-popup[data-status="completed"] { border-color:rgba(244,71,86,.76); }
+.mission-marker-popup[data-status="planned"] { border-color:rgba(53,155,255,.78); }
+.mission-marker-popup[data-status="completed"] h3 { color:#ff9ba6; }
+.mission-marker-popup[data-status="planned"] h3 { color:#a7d4ff; }
+.mission-marker-status--completed { color:#ffbdc4; background:#43232b; }
+.mission-marker-status--planned { color:#b9dcff; background:#183751; }
+
+/* Longer mission descriptions, with an explicit warning for planned locations. */
+.mission-marker-popup {max-height:min(70vh,530px);width:min(380px,calc(100vw - 24px));}
+.mission-marker-approximate {color:#a7d5ff;font-weight:600;font-size:11px;}
+
+.mission-marker-click-tip {color:#dfb978;font-size:11px;margin-top:9px!important;}

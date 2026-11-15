@@ -1,0 +1,100 @@
+/* LUNA-DOC: Styles for compact high-contrast question marks and contextual help popovers. */
+/* Floating guidance keeps the existing scene and all controls stationary. */
+/* LUNA-DOC: High-contrast question-mark triggers and floating explanations. */
+.interaction-help {
+  position: fixed;
+  z-index: 40000;
+  width: min(345px, calc(100vw - 24px));
+  max-height: min(65vh, 350px);
+  overflow-y: auto;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 181, 77, .7);
+  border-radius: 13px;
+  background: rgba(19, 22, 30, .98);
+  box-shadow: 0 14px 40px rgba(0,0,0,.55);
+  pointer-events: none;
+  color: #f2f3f5;
+  font: 13px/1.5 Inter, system-ui, sans-serif;
+}
+.interaction-help[hidden] { display:none !important; }
+.interaction-help strong { display: block; color: #ffca80; margin-bottom: 6px; font-size: 15px; }
+.interaction-help p { margin: 0; }
+.about_team_content { display:grid; gap: 14px; margin-top: 18px; color: #dadde4; line-height: 1.65; }
+.about_team_content p { margin:0; }
+.about_team_content .about-team-intro { color: #fff1dc; font-weight: 600; font-size: 16px; }
+.about-team-features { display:grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.about-team-features > div { display: grid; gap: 5px; padding: 12px; border: 1px solid #3c4250; border-radius: 10px; background:#14171e; }
+.about-team-features strong { color: #ffbf65; }
+.about-team-features span { font-size: 12px; color:#c6cbd6; }
+.about-team-note { font-size: 12px; color:#aeb8c9; }
+
+/* Compact balanced inline contextual help. No extra row below Point/Zone buttons. */
+/* LUNA-DOC: High-contrast question-mark triggers and floating explanations. */
+.luna-help-button {
+  flex:0 0 19px;
+  width:19px;height:19px;padding:0;
+  display:inline-grid;place-items:center;
+  border:1px solid rgba(255,181,77,.50);
+  border-radius:50%;background:rgba(255,181,77,.09);
+  color:#f8c47a; font:600 11px/1 system-ui,sans-serif;
+  cursor:help; pointer-events:auto;
+  box-shadow:none;
+}
+.luna-help-button:hover,.luna-help-button:focus-visible {background:#ffb54d;color:#171a21;border-color:#ffb54d;}
+.luna-help-caption {display:inline-flex;align-items:center;gap:8px;}
+.luna-mode-choice {position:relative;min-width:0;}
+.luna-mode-choice > .location_format_button {width:100%;padding-left:34px;padding-right:34px;min-height:40px;}
+.luna-mode-help {position:absolute;right:10px;top:50%;transform:translateY(-50%);z-index:2;}
+.luna-setting-help-row {display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:31px;}
+.luna-setting-help-actions {display:flex;gap:12px;align-items:center;}
+.luna-setting-help-actions input {margin:0;}
+.luna-surface-hint {color:#acb5c3;font-size:12px;margin-bottom:8px;}
+.luna-daylight-result {color:#ffcb82;font-variant-numeric:tabular-nums;min-width:0;overflow-wrap:anywhere;}
+.luna-daylight-result[data-loading="true"] {color:#a9b5c5;}
+.luna-daylight-result[data-error="true"] {color:#ffaea1;}
+/* LUNA-DOC: Responsive media query: adapt the layout without changing JavaScript functionality. */
+@media (max-width:620px) {.luna-mode-choice > .location_format_button {padding-left:24px;padding-right:24px;} .luna-mode-help{right:6px;}}
+
+/* High-contrast, compact help controls; the popover activates ONLY on ?. */
+/* LUNA-DOC: High-contrast question-mark triggers and floating explanations. */
+.luna-help-button {
+  width: 21px; height: 21px; flex-basis: 21px;
+  font-size: 12px; font-weight: 800;
+  background: #343131;
+  color: #fff4dc;
+  border: 1.5px solid #ffc46f;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.16);
+}
+/* LUNA-DOC: High-contrast question-mark triggers and floating explanations. */
+.luna-help-button:hover, .luna-help-button:focus-visible {
+  background: #ffba51; color: #121720;
+  outline: 2px solid rgba(255,205,125,.48);
+  outline-offset: 2px;
+}
+
+/* Team member cards with initials and contact information. */
+#about-team-dialog {width:min(900px,calc(100vw - 28px));max-width:900px;max-height:min(88vh,850px);overflow:auto;}
+.luna-team-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:6px;}
+.luna-team-card {display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:22px 15px;border:1px solid rgba(163,183,205,.25);border-radius:15px;background:linear-gradient(155deg,rgba(37,45,61,.91),rgba(16,19,28,.98));min-width:0;}
+.luna-team-avatar {height:68px;width:68px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(77,182,243,.62);background:radial-gradient(circle at 30% 25%,#37485d,#161d2b);color:#9ddcff;letter-spacing:1px;font-size:22px;font-weight:700;}
+.luna-team-card h3 {margin:5px 0 0;font-size:16px;color:#f5f7fb;}
+.luna-team-card p {margin:0;color:#aebcd0;font-size:12px;line-height:1.6;}
+.luna-team-card .luna-team-role {color:#8dd4ff;font-size:13px;font-weight:600;}
+/* LUNA-DOC: Responsive media query: adapt the layout without changing JavaScript functionality. */
+@media(max-width:650px){.luna-team-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+/* LUNA-DOC: Responsive media query: adapt the layout without changing JavaScript functionality. */
+@media(max-width:390px){.luna-team-grid{grid-template-columns:1fr;}}
+
+/* Fit all six team members and contacts into a scrollable, responsive About dialog. */
+#about-team-dialog { max-height: min(88vh, 880px); overflow-y: auto; }
+.luna-team-card { justify-content: flex-start; }
+.luna-team-card h3 { overflow-wrap: anywhere; }
+.luna-team-avatar { flex-shrink: 0; width: 68px; padding-inline: 5px; font-size: 19px; }
+.luna-team-contact-panel {
+  display: grid; gap: 7px; margin-top: 4px; padding: 15px 18px;
+  border: 1px solid rgba(163,183,205,.28); border-radius: 14px;
+  background: rgba(20,26,38,.93);
+}
+.luna-team-contact-panel h3 { color: #ffcb8b; font-size: 15px; margin: 0 0 4px; }
+.luna-team-contact-panel a { color: #bfe5ff; overflow-wrap: anywhere; text-decoration: none; }
+.luna-team-contact-panel a:hover, .luna-team-contact-panel a:focus-visible { text-decoration: underline; }

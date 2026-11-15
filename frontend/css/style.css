@@ -1,0 +1,777 @@
+/* LUNA-DOC: Main UI theme: colors, layout, panels, buttons, inputs, and responsiveness. */
+/* LUNA-DOC: Styles for selector body. */
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #0b0d11;
+
+}
+
+/* LUNA-DOC: Styles for selector #cesiumContainer. */
+#cesiumContainer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+/* LUNA-DOC: Styles for selector .app-ui. */
+.app-ui {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100vh;
+  height: 100dvh;
+
+  color: #f4f2ef;
+  color-scheme: dark;
+  font: 14px/1.4 Inter, system-ui, sans-serif;
+  pointer-events: none;
+}
+
+.app-ui,
+/* LUNA-DOC: Styles for selector .app-ui *. */
+.app-ui * {
+  box-sizing: border-box;
+}
+
+/* Header. */
+
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 16px;
+  padding: 8px 25px;
+  border-bottom: 1px solid #fff;
+
+  border-radius: 0 0 20px 20px;
+  background: rgba(27, 29, 34, 0.82);
+}
+
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  color: inherit;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu a:hover {
+  color: #ffb54d;
+}
+
+/* LUNA-DOC: Styles for selector .corp_logo. */
+.corp_logo {
+  font-weight: 700;
+}
+
+/* LUNA-DOC: Styles for selector .about. */
+.about {
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* LUNA-DOC: Common buttons and hover/pressed states. */
+.about button {
+  width: 30px;
+  color: #ffffff;
+  z-index: 10000;
+  pointer-events: auto;
+}
+
+/* LUNA-DOC: Common buttons and hover/pressed states. */
+.about button:hover {
+  color: #ffb54d;
+
+
+}
+
+.time_line,
+.setting,
+/* LUNA-DOC: Left results panel showing calculated physical parameters. */
+.simulation-results {
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 18px;
+  background: rgba(27, 29, 34, 0.82);
+  pointer-events: auto;
+}
+
+/* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+.time_line {
+  flex: 1;
+  padding: 6px 10px;
+  background: rgba(9, 11, 15, 0.65);
+}
+
+/* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+.time_line__controls {
+  display: grid;
+  grid-template-columns: 190px 1fr 190px;
+  grid-template-areas: "start scrub end";
+  align-items: center;
+  gap: 8px 12px;
+}
+
+/* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+.time_line__start {
+  grid-area: start;
+}
+
+/* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+.time_line__end {
+  grid-area: end;
+}
+
+/* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+.time_line__scrub {
+  grid-area: scrub;
+}
+
+.ui-field,
+/* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+.time_line__scrub {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+}
+
+.ui-field>span,
+/* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+.time_line__caption {
+  color: #c9c4bd;
+  font-size: 12px;
+}
+
+/* LUNA-DOC: Coordinate and time fields. */
+.ui-input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 32px;
+  padding: 4px 7px;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 8px;
+  background: rgba(9, 11, 15, 0.65);
+  color: #f4f2ef;
+  font: inherit;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.time_line__date input::-webkit-datetime-edit,
+/* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+.time_line__date input::-webkit-calendar-picker-indicator {
+  padding: 0;
+}
+
+/* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+.time_line__date input::-webkit-calendar-picker-indicator {
+  margin: 0;
+}
+
+/* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+.time_line__caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+}
+
+/* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+.time_line__caption output {
+  min-width: 0;
+  color: #ffb54d;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+/* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+.time_line__slider {
+  appearance: auto;
+  width: 100%;
+  min-width: 0;
+  height: 24px;
+  margin: 0;
+  accent-color: #ffb54d;
+  cursor: pointer;
+  touch-action: none;
+}
+
+/* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+.time_line__slider:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* LUNA-DOC: Styles for selector .control-status. */
+.control-status {
+  min-height: 1em;
+  margin: 0;
+  color: #c9c4bd;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+/* LUNA-DOC: Styles for selector .control-status[data-error="true"]. */
+.control-status[data-error="true"] {
+  color: #ff9d91;
+}
+
+.app-ui a:focus-visible,
+.app-ui button:focus-visible,
+.app-ui input:focus-visible,
+.app-ui select:focus-visible,
+.app-ui textarea:focus-visible,
+/* LUNA-DOC: Styles for selector .app-ui summary:focus-visible. */
+.app-ui summary:focus-visible {
+  outline: 2px solid #ffb54d;
+  outline-offset: 2px;
+}
+
+
+/* LUNA-DOC: Styles for selector .main_content. */
+.main_content {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+  min-height: 0;
+  padding: 0 10px 10px;
+}
+
+/* LUNA-DOC: Left results panel showing calculated physical parameters. */
+.simulation-results {
+  width: 344px;
+}
+
+/* LUNA-DOC: Styles for selector .setting. */
+.setting {
+  width: 272px;
+}
+
+.simulation-results,
+/* LUNA-DOC: Styles for selector .setting. */
+.setting {
+  max-height: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff40 transparent;
+}
+
+/* LUNA-DOC: Styles for selector .setting_panel+.setting_panel. */
+.setting_panel+.setting_panel {
+  border-top: 1px solid rgba(255, 255, 255, 0.17);
+}
+
+/* LUNA-DOC: Styles for selector .panel-heading. */
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+/* LUNA-DOC: Styles for selector .panel-heading::-webkit-details-marker. */
+.panel-heading::-webkit-details-marker {
+  display: none;
+}
+
+/* LUNA-DOC: Styles for selector .panel-heading:hover. */
+.panel-heading:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* LUNA-DOC: Styles for selector .app-ui .panel-heading:focus-visible. */
+.app-ui .panel-heading:focus-visible {
+  outline-offset: -3px;
+}
+
+/* LUNA-DOC: Styles for selector .panel-heading::after. */
+.panel-heading::after {
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid #ffb54d;
+  border-bottom: 2px solid #ffb54d;
+  transform: rotate(45deg);
+}
+
+/* LUNA-DOC: Styles for selector details[open]>.panel-heading::after. */
+details[open]>.panel-heading::after {
+  transform: rotate(225deg);
+}
+
+/* LUNA-DOC: Styles for selector .panel-body. */
+.panel-body {
+  padding: 0 14px 12px;
+}
+
+/* LUNA-DOC: Styles for selector .panel-body:empty. */
+.panel-body:empty {
+  padding: 0;
+}
+
+.location_setting_format,
+/* LUNA-DOC: Point/Zone selection and coordinate controls. */
+.location_data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+/* LUNA-DOC: Point/Zone selection and coordinate controls. */
+.location_data {
+  margin-top: 10px;
+}
+
+/* LUNA-DOC: Point/Zone selection and coordinate controls. */
+.location_data input {
+  text-align: center;
+}
+
+.coordinate-submit,
+#zone-radius-field,
+/* LUNA-DOC: Styles for selector #coordinate-status. */
+#coordinate-status {
+  grid-column: 1 / -1;
+}
+
+/* LUNA-DOC: Zone settings, color legend, and canvas. */
+#zone-radius-field[hidden] {
+  display: none;
+}
+
+/* LUNA-DOC: Styles for selector #coordinate-status:empty. */
+#coordinate-status:empty {
+  display: none;
+}
+
+/* LUNA-DOC: Zone settings, color legend, and canvas. */
+.zone-map-controls {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.zone-map-controls[hidden],
+/* LUNA-DOC: Zone settings, color legend, and canvas. */
+.zone-map-details[hidden] {
+  display: none;
+}
+
+/* LUNA-DOC: Zone settings, color legend, and canvas. */
+.zone-map-actions {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+}
+
+/* LUNA-DOC: Zone settings, color legend, and canvas. */
+.zone-map-actions button {
+  min-height: 32px;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+/* LUNA-DOC: Zone settings, color legend, and canvas. */
+.zone-map-scale {
+  height: 10px;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.24);
+}
+
+/* LUNA-DOC: Zone settings, color legend, and canvas. */
+.zone-map-scale-labels {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 3px;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* LUNA-DOC: Detailed parameter display in Advanced mode. */
+.advanced-results {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.17);
+}
+
+.advanced-results dl,
+/* LUNA-DOC: Zone settings, color legend, and canvas. */
+.zone-map-details {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 4px 8px;
+  margin-top: 4px;
+  color: #c9c4bd;
+  font-size: 12px;
+}
+
+.advanced-results dd,
+/* LUNA-DOC: Zone settings, color legend, and canvas. */
+.zone-map-details dd {
+  text-align: right;
+  color: #f4f2ef;
+  overflow-wrap: anywhere;
+}
+
+/* LUNA-DOC: Zone settings, color legend, and canvas. */
+.zone-average {
+  padding: 8px 0 4px;
+  font-size: 13px;
+}
+
+/* LUNA-DOC: Zone settings, color legend, and canvas. */
+.zone-average output {
+  display: block;
+  color: #ffb54d;
+  font-size: 22px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+/* LUNA-DOC: Zone settings, color legend, and canvas. */
+.zone-map-details {
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.17);
+}
+
+/* LUNA-DOC: Zone settings, color legend, and canvas. */
+.zone-probe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  max-width: min(250px, calc(100vw - 16px));
+  padding: 7px 9px;
+  border: 1px solid rgba(255, 181, 77, 0.55);
+  border-radius: 8px;
+  background: rgba(18, 20, 25, 0.96);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+  pointer-events: none;
+}
+
+/* LUNA-DOC: Zone settings, color legend, and canvas. */
+.zone-probe output {
+  display: block;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+/* LUNA-DOC: Common buttons and hover/pressed states. */
+.body-view-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+}
+
+/* LUNA-DOC: Point/Zone selection and coordinate controls. */
+.location_format_button {
+  min-width: 0;
+  min-height: 36px;
+  padding: 6px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 8px;
+  background: rgba(9, 11, 15, 0.65);
+  color: #f4f2ef;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* LUNA-DOC: Point/Zone selection and coordinate controls. */
+.location_format_button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* LUNA-DOC: Point/Zone selection and coordinate controls. */
+.location_format_button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* LUNA-DOC: Point/Zone selection and coordinate controls. */
+.location_setting_format .location_format_button[aria-pressed="true"] {
+  border-color: #ffb54d;
+  background: #ffb54d;
+  color: #211608;
+  font-weight: 600;
+}
+
+/* LUNA-DOC: Styles for selector .set_list. */
+.set_list {
+  display: grid;
+  gap: 2px;
+}
+
+/* LUNA-DOC: Styles for selector .layer_row. */
+.layer_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 32px;
+  cursor: pointer;
+}
+
+/* LUNA-DOC: Coordinate and time fields. */
+.layer_row input[type="checkbox"] {
+  appearance: auto;
+  width: 18px;
+  height: 18px;
+  flex: none;
+  margin: 0;
+  accent-color: #ffb54d;
+  cursor: pointer;
+}
+
+
+/* LUNA-DOC: Left results panel showing calculated physical parameters. */
+.simulation-results__time {
+  margin: 0;
+  padding: 8px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.17);
+  color: #c9c4bd;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* LUNA-DOC: Left results panel showing calculated physical parameters. */
+.simulation-results__table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.simulation-results__table th,
+/* LUNA-DOC: Left results panel showing calculated physical parameters. */
+.simulation-results__table td {
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+/* LUNA-DOC: Left results panel showing calculated physical parameters. */
+.simulation-results__table th:first-child {
+  width: 46%;
+  padding-right: 8px;
+  text-align: left;
+}
+
+/* LUNA-DOC: Left results panel showing calculated physical parameters. */
+.simulation-results__table thead th {
+  color: #ffb54d;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* LUNA-DOC: Left results panel showing calculated physical parameters. */
+.simulation-results__table tbody th {
+  font-weight: 500;
+}
+
+/* LUNA-DOC: Left results panel showing calculated physical parameters. */
+.simulation-results__table small {
+  display: block;
+  margin-top: 2px;
+  color: #c9c4bd;
+  font-size: 11px;
+}
+
+/* LUNA-DOC: Left results panel showing calculated physical parameters. */
+.simulation-results__table td {
+  font-variant-numeric: tabular-nums;
+}
+
+/* LUNA-DOC: Left results panel showing calculated physical parameters. */
+.simulation-results__table td[data-average] {
+  color: #c9c4bd;
+}
+
+/* LUNA-DOC: Left results panel showing calculated physical parameters. */
+.simulation-results__table tbody tr:last-child>* {
+  border-bottom: 0;
+}
+
+
+/* LUNA-DOC: Responsive media query: adapt the layout without changing JavaScript functionality. */
+@media (max-width: 1000px) {
+  /* LUNA-DOC: Styles for selector .app-ui. */
+  .app-ui {
+    gap: 8px;
+    padding: 0 8px 8px;
+  }
+
+  /* LUNA-DOC: Top navigation and timeline layout. */
+  .top-menu {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 5px 8px;
+    padding: 6px 8px;
+    border-radius: 22px;
+  }
+
+  /* LUNA-DOC: Styles for selector .about. */
+  .about {
+    padding: 0;
+  }
+
+  /* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+  .time_line {
+    order: 1;
+    flex: 0 0 100%;
+  }
+
+  /* LUNA-DOC: Styles for selector .main_content. */
+  .main_content {
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  .simulation-results,
+  /* LUNA-DOC: Styles for selector .setting. */
+  .setting {
+    width: 50%;
+    max-height: 42dvh;
+  }
+}
+
+/* Phone layout. */
+
+/* LUNA-DOC: Responsive media query: adapt the layout without changing JavaScript functionality. */
+@media (max-width: 700px) {
+  /* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+  .time_line__controls {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "start end" "scrub scrub";
+    gap: 6px 8px;
+  }
+
+  /* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+  .time_line__date .ui-input {
+    padding-inline: 5px;
+    font-size: 12px;
+  }
+}
+
+/* LUNA-DOC: Responsive media query: adapt the layout without changing JavaScript functionality. */
+@media (max-width: 600px) and (orientation: portrait) {
+  /* LUNA-DOC: Styles for selector .main_content. */
+  .main_content {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+  }
+
+  .simulation-results,
+  /* LUNA-DOC: Styles for selector .setting. */
+  .setting {
+    width: 100%;
+    max-height: 21dvh;
+  }
+}
+
+/* LUNA-DOC: Responsive media query: adapt the layout without changing JavaScript functionality. */
+@media (max-width: 350px) {
+  /* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+  .time_line__controls {
+    grid-template-columns: 1fr;
+    grid-template-areas: "start" "end" "scrub";
+  }
+}
+
+
+/* LUNA-DOC: Responsive media query: adapt the layout without changing JavaScript functionality. */
+@media (max-height: 450px) and (orientation: landscape) {
+  /* LUNA-DOC: Top navigation and timeline layout. */
+  .top-menu {
+    padding-block: 4px;
+  }
+
+  /* LUNA-DOC: Top navigation and timeline layout. */
+  .top-menu a {
+    min-height: 24px;
+  }
+
+  /* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+  .time_line {
+    padding-block: 4px;
+  }
+
+  .simulation-results,
+  /* LUNA-DOC: Styles for selector .setting. */
+  .setting {
+    max-height: 34dvh;
+  }
+}
+
+/* LUNA-DOC: Responsive media query: adapt the layout without changing JavaScript functionality. */
+@media (min-width: 520px) and (max-height: 450px) {
+  /* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+  .time_line__controls {
+    grid-template-columns: 155px 1fr 155px;
+    grid-template-areas: "start scrub end";
+  }
+
+  /* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+  .time_line__date .ui-input {
+    padding-inline: 5px;
+    font-size: 12px;
+  }
+}
+
+/* Touch controls. */
+
+/* LUNA-DOC: Responsive media query: adapt the layout without changing JavaScript functionality. */
+@media (pointer: coarse) {
+
+  .location_format_button,
+  /* LUNA-DOC: Styles for selector .layer_row. */
+  .layer_row {
+    min-height: 42px;
+  }
+
+  /* LUNA-DOC: UTC interval fields, timeline slider, and selected time. */
+  .time_line__slider {
+    height: 30px;
+  }
+
+  /* LUNA-DOC: Point/Zone selection and coordinate controls. */
+  .location_data input {
+    font-size: 16px;
+  }
+}
+
+/* LUNA Spiculum branding supplied by the team (luna-logo.svg). */
+.corp_logo { flex:0 0 auto; display:inline-flex; align-items:center; }
+.corp_logo img { display:block; width:clamp(170px, 14vw, 242px); height:auto; max-height:72px; object-fit:contain; }
+/* LUNA-DOC: Responsive media query: adapt the layout without changing JavaScript functionality. */
+@media(max-width:1000px){.corp_logo img{width:170px;max-height:48px;}}
+/* LUNA-DOC: Responsive media query: adapt the layout without changing JavaScript functionality. */
+@media(max-width:600px){.corp_logo img{width:145px;max-height:43px;}}

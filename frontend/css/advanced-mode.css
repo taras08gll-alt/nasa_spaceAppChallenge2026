@@ -1,0 +1,409 @@
+/* LUNA-DOC: Styles for Advanced mode and Open charts, including plots, canvas, and detailed metrics. */
+/* LUNA-DOC: Top navigation and timeline layout. */
+.app-ui .top-menu {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr) max-content;
+  grid-template-areas: "brand timeline actions";
+  align-items: center;
+  gap: 8px clamp(10px, 1.4vw, 24px);
+  padding: 10px clamp(12px, 1.4vw, 24px);
+  border: 1px solid rgba(255, 181, 77, 0.29);
+  border-top: 0;
+  border-radius: 0 0 19px 19px;
+  background: linear-gradient(140deg, #26282e, #15171c 54%, #22252c);
+  box-shadow: 0 8px 24px rgba(4, 6, 10, 0.24);
+}
+
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu .corp_logo {
+  grid-area: brand;
+  justify-self: start;
+  border-radius: 6px;
+  color: #f6f3ee;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+  line-height: 1.2;
+}
+
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu .time_line {
+  grid-area: timeline;
+  padding: 6px 12px;
+  border-color: rgba(197, 206, 227, 0.18);
+  border-radius: 13px;
+  background: rgba(8, 10, 15, 0.55);
+}
+
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu .time_line__controls {
+  grid-template-columns: minmax(155px, 190px) minmax(0, 1fr) minmax(155px, 190px);
+  column-gap: clamp(10px, 1.2vw, 20px);
+}
+
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu .time_line__date .ui-input {
+  min-height: 36px;
+  border-color: rgba(197, 206, 227, 0.22);
+  background: #171a21;
+}
+
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu .time_line__date .ui-input:hover {
+  border-color: rgba(255, 181, 77, 0.6);
+}
+
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu .time_line__caption output {
+  padding: 2px 7px;
+  border: 1px solid rgba(255, 181, 77, 0.23);
+  border-radius: 6px;
+  background: rgba(255, 181, 77, 0.07);
+  font-weight: 600;
+}
+
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu .time_line__slider {
+  --timeline-track: linear-gradient(
+    to right, #ffb54d 0%, #ffb54d var(--timeline-progress, 0%),
+    #3c424e var(--timeline-progress, 0%), #3c424e 100%
+  );
+  appearance: none;
+  border-radius: 5px;
+  background: transparent;
+}
+
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu .time_line__slider::-webkit-slider-runnable-track {
+  height: 5px;
+  border-radius: 999px;
+  background: var(--timeline-track);
+}
+
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu .time_line__slider::-moz-range-track {
+  height: 5px;
+  border-radius: 999px;
+  background: var(--timeline-track);
+}
+
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu .time_line__slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -5.5px;
+  border: 2px solid #1b1710;
+  border-radius: 50%;
+  background: #ffbc63;
+}
+
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu .time_line__slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #1b1710;
+  border-radius: 50%;
+  background: #ffbc63;
+}
+
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu .about {
+  grid-area: actions;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  height: auto;
+  padding: 0;
+}
+
+.top-menu .about > :is(a, button),
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu .about > details > summary {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  min-height: 38px;
+  border: 1px solid rgba(197, 206, 227, 0.21);
+  border-radius: 10px;
+  background: #171a21;
+  color: #e8e9ed;
+  pointer-events: auto;
+}
+
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu .about :is(a, button, summary):hover {
+  border-color: rgba(255, 181, 77, 0.55);
+  color: #ffb54d;
+}
+
+/* LUNA-DOC: Top navigation and timeline layout. */
+.top-menu .about svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* LUNA-DOC: Responsive media query: adapt the layout without changing JavaScript functionality. */
+@media (max-width: 1000px) {
+  /* LUNA-DOC: Top navigation and timeline layout. */
+  .app-ui .top-menu {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "brand actions" "timeline timeline";
+    padding: 6px 8px 8px;
+  }
+}
+
+/* LUNA-DOC: Responsive media query: adapt the layout without changing JavaScript functionality. */
+@media (max-width: 700px) {
+  /* LUNA-DOC: Top navigation and timeline layout. */
+  .top-menu .time_line__controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* LUNA-DOC: Responsive media query: adapt the layout without changing JavaScript functionality. */
+@media (max-width: 350px) {
+  /* LUNA-DOC: Top navigation and timeline layout. */
+  .top-menu .time_line__controls {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* LUNA-DOC: Responsive media query: adapt the layout without changing JavaScript functionality. */
+@media (min-width: 620px) and (max-width: 1000px) and (max-height: 450px) {
+  /* LUNA-DOC: Top navigation and timeline layout. */
+  .app-ui .top-menu {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "brand timeline actions";
+  }
+
+  /* LUNA-DOC: Top navigation and timeline layout. */
+  .top-menu .time_line__controls {
+    grid-template-columns: 150px minmax(0, 1fr) 150px;
+    grid-template-areas: "start scrub end";
+  }
+}
+
+/* LUNA-DOC: Detailed parameter display in Advanced mode. */
+.advanced-results > h3 {
+  font-weight: 600;
+}
+
+.advanced-chart-button[hidden],
+.advanced-parameters[hidden],
+/* LUNA-DOC: Styles for selector .simulation-loading[hidden]. */
+.simulation-loading[hidden] {
+  display: none;
+}
+
+/* LUNA-DOC: Render 2D and 3D plots inside the modal dialog. */
+.setting .advanced-chart-button {
+  width: 100%;
+  min-height: 36px;
+  margin: 2px 0 6px;
+  border-color: rgba(255, 181, 77, 0.55);
+  background: rgba(255, 181, 77, 0.09);
+  color: #ffd09a;
+  font-weight: 600;
+}
+
+/* LUNA-DOC: Render 2D and 3D plots inside the modal dialog. */
+.setting .advanced-chart-button:hover {
+  background: rgba(255, 181, 77, 0.2);
+}
+
+/* LUNA-DOC: Detailed parameter display in Advanced mode. */
+.advanced-parameters {
+  margin: 4px 0 10px;
+  padding: 0 8px;
+  border: 1px solid rgba(255, 181, 77, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 181, 77, 0.04);
+}
+
+/* LUNA-DOC: Detailed parameter display in Advanced mode. */
+.advanced-parameters > summary {
+  padding: 7px 2px;
+  color: #ffbf65;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* LUNA-DOC: Detailed parameter display in Advanced mode. */
+.advanced-parameters > dl {
+  padding: 0 2px 8px;
+}
+
+/* LUNA-DOC: Styles for selector .main_content. */
+.main_content {
+  position: relative;
+}
+
+/* LUNA-DOC: Styles for selector .simulation-loading. */
+.simulation-loading {
+  position: absolute;
+  z-index: 2;
+  inset: 2px auto auto 50%;
+  width: max-content;
+  max-width: calc(100% - 24px);
+  transform: translateX(-50%);
+  padding: 7px 12px;
+  border: 1px solid rgba(255, 181, 77, 0.43);
+  border-radius: 999px;
+  background: #181b22;
+  color: #f5ecdb;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.44);
+  font-size: 13px;
+  pointer-events: none;
+}
+
+/* LUNA-DOC: Styles for selector [data-loading="true"]::before. */
+[data-loading="true"]::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 7px;
+  border: 2px solid rgba(255, 181, 77, 0.26);
+  border-top-color: #ffb54d;
+  border-radius: 50%;
+  vertical-align: -2px;
+  animation: loading-spin 0.8s linear infinite;
+}
+
+/* LUNA-DOC: Keyframes for UI-only visual animation. */
+@keyframes loading-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* LUNA-DOC: Responsive media query: adapt the layout without changing JavaScript functionality. */
+@media (prefers-reduced-motion: reduce) {
+  /* LUNA-DOC: Styles for selector [data-loading="true"]::before. */
+  [data-loading="true"]::before {
+    animation: none;
+  }
+}
+
+/* LUNA-DOC: Modal dialog layout and controls. */
+.analysis-dialog {
+  width: min(720px, calc(100% - 24px));
+  max-height: calc(100vh - 24px);
+  max-height: calc(100dvh - 24px);
+  margin: auto;
+  padding: clamp(12px, 2.4vw, 22px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid #40444d;
+  border-radius: 16px;
+  color: #f4f2ef;
+  color-scheme: dark;
+  background: #191c23;
+  box-shadow: 0 18px 65px rgba(0, 0, 0, 0.55);
+  font: 14px/1.4 Inter, system-ui, sans-serif;
+}
+
+/* LUNA-DOC: Modal dialog layout and controls. */
+.analysis-dialog::backdrop {
+  background: rgba(4, 6, 10, 0.72);
+}
+
+/* LUNA-DOC: Modal dialog layout and controls. */
+.analysis-dialog__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* LUNA-DOC: Modal dialog layout and controls. */
+.analysis-dialog__header h2 {
+  margin-bottom: 3px;
+  font-size: clamp(17px, 3.6vw, 22px);
+  font-weight: 650;
+}
+
+.analysis-dialog__header p:empty,
+.analysis-dialog__status:empty,
+.analysis-dialog__metric[hidden],
+/* LUNA-DOC: Modal dialog layout and controls. */
+.analysis-dialog__plot[hidden] {
+  display: none;
+}
+
+/* LUNA-DOC: Modal dialog layout and controls. */
+.analysis-dialog__metric {
+  max-width: 320px;
+  margin-top: 15px;
+}
+
+/* LUNA-DOC: Modal dialog layout and controls. */
+.analysis-dialog__status {
+  margin-top: 16px;
+}
+
+/* LUNA-DOC: Modal dialog layout and controls. */
+.analysis-dialog__plot {
+  margin-top: 16px;
+  padding: 8px 8px 0;
+  border: 1px solid #383d48;
+  border-radius: 12px;
+  background: #11141a;
+}
+
+/* LUNA-DOC: Modal dialog layout and controls. */
+.analysis-dialog__plot canvas {
+  width: 100%;
+  height: clamp(160px, 44dvh, 340px);
+  border-radius: 6px;
+}
+
+/* LUNA-DOC: Modal dialog layout and controls. */
+.analysis-dialog__readout {
+  display: block;
+  min-height: 38px;
+  padding: 8px 4px;
+  border-top: 1px solid #383d48;
+  color: #ffbf65;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* LUNA-DOC: Styles for selector .analysis-surface__viewport. */
+.analysis-surface__viewport {
+  position: relative;
+  height: clamp(150px, 48dvh, 390px);
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+/* LUNA-DOC: Styles for selector .analysis-surface__viewport canvas. */
+.analysis-surface__viewport canvas {
+  height: 100%;
+  cursor: grab;
+  touch-action: none;
+}
+
+/* LUNA-DOC: Styles for selector .analysis-surface__viewport canvas:active. */
+.analysis-surface__viewport canvas:active {
+  cursor: grabbing;
+}
+
+/* LUNA-DOC: Styles for selector .analysis-surface__readout. */
+.analysis-surface__readout {
+  display: grid;
+  gap: 6px;
+}
+
+/* LUNA-DOC: Styles for selector .analysis-surface__readout p. */
+.analysis-surface__readout p {
+  margin: 0;
+}
+
+/* LUNA-DOC: Modal dialog layout and controls. */
+.analysis-dialog :is(button, select, canvas):focus-visible {
+  outline: 2px solid #ffb54d;
+  outline-offset: 2px;
+}
