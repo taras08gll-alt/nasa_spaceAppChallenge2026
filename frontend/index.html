@@ -24,27 +24,30 @@
   <div class="app-ui">
     <!-- LUNA-DOC: Semantic <nav> container organizes the interface; nesting order matters to CSS. -->
     <nav class="top-menu" aria-label="Project navigation">
-      <a href="/" class="corp_logo" aria-label="LUNA Spiculum — home"><img src="./luna-logo.svg" alt="LUNA Spiculum — Lunar Unified Navigational Atlas" width="242" height="70"></a>
+      <a href="/" class="corp_logo" aria-label="LUNA Spiculum — home"><img src="./luna-logo.svg"
+          alt="LUNA Spiculum — Lunar Unified Navigational Atlas" width="242" height="70"></a>
 
       <div class="time_line" role="group" aria-label="Simulation timeline">
         <div class="time_line__controls">
           <label class="ui-field time_line__date time_line__start">
             <span>Start (UTC)</span>
             <!-- LUNA-DOC: Start of the UTC time interval; JavaScript interprets this datetime-local value as UTC. -->
-            <input class="ui-input" id="timeline-start" name="start_utc" type="datetime-local" step="1" min="1550-01-01T00:00"
-              max="2650-01-24T00:00" required>
+            <input class="ui-input" id="timeline-start" name="start_utc" type="datetime-local" step="1"
+              min="1550-01-01T00:00" max="2650-01-24T00:00" required>
           </label>
 
           <label class="ui-field time_line__date time_line__end">
             <span>End (UTC)</span>
             <!-- LUNA-DOC: End of the UTC interval; it must be later than the start. -->
-            <input class="ui-input" id="timeline-end" name="end_utc" type="datetime-local" step="1" min="1550-01-01T00:00"
-              max="2650-01-24T00:00" required>
+            <input class="ui-input" id="timeline-end" name="end_utc" type="datetime-local" step="1"
+              min="1550-01-01T00:00" max="2650-01-24T00:00" required>
           </label>
 
           <div class="time_line__scrub">
             <div class="time_line__caption">
-              <div class="luna-help-caption"><label for="timeline-slider">Selected time</label><button type="button" class="luna-help-button" data-help="timeline" aria-label="Timeline help" title="Timeline help">?</button></div>
+              <div class="luna-help-caption"><label for="timeline-slider">Selected time</label><button type="button"
+                  class="luna-help-button" data-help="timeline" aria-label="Timeline help"
+                  title="Timeline help">?</button></div>
               <output id="timeline-current" for="timeline-start timeline-end timeline-slider">—</output>
             </div>
 
@@ -57,10 +60,10 @@
 
       <div class="about">
         <!-- LUNA-DOC: Opens the About our team dialog. -->
-        <button type="button" class="about_team" id="about-team-open"
-          aria-label="About our team" aria-haspopup="dialog" aria-controls="about-team-dialog">
-          <svg aria-hidden="true" focusable="false" width="25" height="25"
-            viewBox="0 0 372.483 372.483" fill="currentColor">
+        <button type="button" class="about_team" id="about-team-open" aria-label="About our team" aria-haspopup="dialog"
+          aria-controls="about-team-dialog">
+          <svg aria-hidden="true" focusable="false" width="25" height="25" viewBox="0 0 372.483 372.483"
+            fill="currentColor">
             <path d="M372.482,263.045c0-21.796-6.527-42.842-18.877-60.863c-8.883-12.962-20.322-23.726-33.578-31.725
                 c15.607-14.78,25.372-35.67,25.372-58.811c0-44.684-36.354-81.038-81.037-81.038c-26.496,0-51.316,13.104-66.392,34.615
                 c-3.831-0.558-7.745-0.859-11.729-0.859s-7.897,0.302-11.728,0.859c-15.077-21.511-39.897-34.615-66.392-34.615
@@ -225,24 +228,42 @@
             <details id="advanced-results" class="advanced-results advanced-parameters" open hidden>
               <summary>Advanced parameters</summary>
               <dl>
-                <dt>Sunward horizon</dt><dd data-detail="horizon_deg" data-unit="°">—</dd>
-                <dt>Sun above local horizon</dt><dd data-detail="sun_clearance_deg" data-unit="°">—</dd>
-                <dt>Sun incidence on slope</dt><dd data-detail="sun_incidence_deg" data-unit="°">—</dd>
-                <dt>Solar flux at lunar distance</dt><dd data-detail="solar_normal_w_m2" data-unit="W/m²">—</dd>
-                <dt>Absorbed sunlight</dt><dd data-detail="absorbed_w_m2" data-unit="W/m²">—</dd>
-                <dt>Emitted thermal flux</dt><dd data-detail="emitted_w_m2" data-unit="W/m²">—</dd>
-                <dt>Net surface radiation</dt><dd data-detail="net_radiation_w_m2" data-unit="W/m²">—</dd>
-                <dt>Sun distance</dt><dd data-detail="sun_distance_km" data-unit="km">—</dd>
-                <dt>Solar disk diameter</dt><dd data-detail="sun_diameter_arcmin" data-unit="′">—</dd>
-                <dt>Earth elevation</dt><dd data-detail="earth_elevation_deg" data-unit="°">—</dd>
-                <dt>Earth azimuth</dt><dd data-detail="earth_azimuth_deg" data-unit="°">—</dd>
-                <dt>Earthward horizon</dt><dd data-detail="earth_horizon_deg" data-unit="°">—</dd>
-                <dt>Earth clearance</dt><dd data-detail="earth_clearance_deg" data-unit="°">—</dd>
-                <dt>Earth distance</dt><dd data-detail="earth_distance_km" data-unit="km">—</dd>
-                <dt>Earth disk diameter</dt><dd data-detail="earth_diameter_deg" data-unit="°">—</dd>
-                <dt>One-way signal delay</dt><dd data-detail="earth_signal_delay_s" data-unit="s">—</dd>
-                <dt>Free-space path loss</dt><dd data-detail="earth_path_loss_db" data-unit="dB">—</dd>
-                <dt>Local link status</dt><dd data-detail="earth_direct_link">—</dd>
+                <dt>Sunward horizon</dt>
+                <dd data-detail="horizon_deg" data-unit="°">—</dd>
+                <dt>Sun above local horizon</dt>
+                <dd data-detail="sun_clearance_deg" data-unit="°">—</dd>
+                <dt>Sun incidence on slope</dt>
+                <dd data-detail="sun_incidence_deg" data-unit="°">—</dd>
+                <dt>Solar flux at lunar distance</dt>
+                <dd data-detail="solar_normal_w_m2" data-unit="W/m²">—</dd>
+                <dt>Absorbed sunlight</dt>
+                <dd data-detail="absorbed_w_m2" data-unit="W/m²">—</dd>
+                <dt>Emitted thermal flux</dt>
+                <dd data-detail="emitted_w_m2" data-unit="W/m²">—</dd>
+                <dt>Net surface radiation</dt>
+                <dd data-detail="net_radiation_w_m2" data-unit="W/m²">—</dd>
+                <dt>Sun distance</dt>
+                <dd data-detail="sun_distance_km" data-unit="km">—</dd>
+                <dt>Solar disk diameter</dt>
+                <dd data-detail="sun_diameter_arcmin" data-unit="′">—</dd>
+                <dt>Earth elevation</dt>
+                <dd data-detail="earth_elevation_deg" data-unit="°">—</dd>
+                <dt>Earth azimuth</dt>
+                <dd data-detail="earth_azimuth_deg" data-unit="°">—</dd>
+                <dt>Earthward horizon</dt>
+                <dd data-detail="earth_horizon_deg" data-unit="°">—</dd>
+                <dt>Earth clearance</dt>
+                <dd data-detail="earth_clearance_deg" data-unit="°">—</dd>
+                <dt>Earth distance</dt>
+                <dd data-detail="earth_distance_km" data-unit="km">—</dd>
+                <dt>Earth disk diameter</dt>
+                <dd data-detail="earth_diameter_deg" data-unit="°">—</dd>
+                <dt>One-way signal delay</dt>
+                <dd data-detail="earth_signal_delay_s" data-unit="s">—</dd>
+                <dt>Free-space path loss</dt>
+                <dd data-detail="earth_path_loss_db" data-unit="dB">—</dd>
+                <dt>Local link status</dt>
+                <dd data-detail="earth_direct_link">—</dd>
               </dl>
             </details>
 
@@ -269,7 +290,8 @@
                 <tr data-metric="dose_rate_usv_h">
                   <th scope="row">
                     Radiation dose rate
-                    <small title="Illustrative galactic cosmic rays and solar wind model. Solar particle events require separate data.">
+                    <small
+                      title="Illustrative galactic cosmic rays and solar wind model. Solar particle events require separate data.">
                       µSv/h · model estimate
                     </small>
                   </th>
@@ -303,11 +325,14 @@
                 </tr>
                 <tr data-metric="next_sunlight_h" data-instant-fallback="sunlight_wait_status">
                   <th scope="row">Direct sunlight <small>h · wait / period total</small></th>
-                  <td data-instant title="Hours until direct sunlight is visible. Zero means sunlight is visible now.">—</td>
-                  <td data-average="sunlight_hours" title="Total hours of direct sunlight during the selected period">—</td>
+                  <td data-instant title="Hours until direct sunlight is visible. Zero means sunlight is visible now.">—
+                  </td>
+                  <td data-average="sunlight_hours" title="Total hours of direct sunlight during the selected period">—
+                  </td>
                 </tr>
                 <tr data-metric="terrain_elevation_m">
-                  <th scope="row">Point elevation <small title="Height relative to the 1,737.4 km lunar reference sphere">m · lunar datum</small></th>
+                  <th scope="row">Point elevation <small
+                      title="Height relative to the 1,737.4 km lunar reference sphere">m · lunar datum</small></th>
                   <td data-instant>—</td>
                   <td data-average>—</td>
                 </tr>
@@ -317,7 +342,8 @@
                   <td data-average>—</td>
                 </tr>
                 <tr data-metric="link_margin_db" data-instant-fallback="earth_direct_link">
-                  <th scope="row">Earth link margin <small title="2.2 GHz model · the workbook sets a minimum target of 3 dB">dB · target ≥ 3</small></th>
+                  <th scope="row">Earth link margin <small
+                      title="2.2 GHz model · the workbook sets a minimum target of 3 dB">dB · target ≥ 3</small></th>
                   <td data-instant>—</td>
                   <td data-average title="Mean margin while Earth is in direct view">—</td>
                 </tr>
@@ -341,11 +367,16 @@
             <div id="zone-map-details" class="advanced-results" hidden>
               <h3>Zone parameters</h3>
               <dl>
-                <dt>Area on reference sphere</dt><dd id="zone-map-area">—</dd>
-                <dt>Grid spacing</dt><dd id="zone-map-spacing">—</dd>
-                <dt>Valid grid points</dt><dd id="zone-map-samples">—</dd>
-                <dt>Terrain coverage</dt><dd id="zone-map-coverage">—</dd>
-                <dt>Value range in zone</dt><dd id="zone-map-range">—</dd>
+                <dt>Area on reference sphere</dt>
+                <dd id="zone-map-area">—</dd>
+                <dt>Grid spacing</dt>
+                <dd id="zone-map-spacing">—</dd>
+                <dt>Valid grid points</dt>
+                <dd id="zone-map-samples">—</dd>
+                <dt>Terrain coverage</dt>
+                <dd id="zone-map-coverage">—</dd>
+                <dt>Value range in zone</dt>
+                <dd id="zone-map-range">—</dd>
               </dl>
             </div>
           </div>
@@ -362,7 +393,8 @@
               <div class="luna-setting-help-actions">
                 <!-- LUNA-DOC: Checkbox for additional parameters and charts. -->
                 <input type="checkbox" id="advanced-mode" aria-label="Advanced mode">
-                <button type="button" class="luna-help-button" data-help="advanced" aria-label="Advanced mode help" title="Advanced mode help">?</button>
+                <button type="button" class="luna-help-button" data-help="advanced" aria-label="Advanced mode help"
+                  title="Advanced mode help">?</button>
               </div>
             </div>
             <!-- LUNA-DOC: Open charts button connected to analysis-charts.js. -->
@@ -393,13 +425,17 @@
             <div class="location_setting_format">
               <div class="luna-mode-choice">
                 <!-- LUNA-DOC: Element #location-mode-point is referenced by JavaScript or CSS. -->
-                <button type="button" class="point_format location_format_button" id="location-mode-point" aria-pressed="true">Point</button>
-                <button type="button" class="luna-help-button luna-mode-help" data-help="point" aria-label="Point mode help" title="Point mode help">?</button>
+                <button type="button" class="point_format location_format_button" id="location-mode-point"
+                  aria-pressed="true">Point</button>
+                <button type="button" class="luna-help-button luna-mode-help" data-help="point"
+                  aria-label="Point mode help" title="Point mode help">?</button>
               </div>
               <div class="luna-mode-choice">
                 <!-- LUNA-DOC: Element #location-mode-zone is referenced by JavaScript or CSS. -->
-                <button type="button" class="zone_format location_format_button" id="location-mode-zone" aria-pressed="false">Zone</button>
-                <button type="button" class="luna-help-button luna-mode-help" data-help="zone" aria-label="Zone mode help" title="Zone mode help">?</button>
+                <button type="button" class="zone_format location_format_button" id="location-mode-zone"
+                  aria-pressed="false">Zone</button>
+                <button type="button" class="luna-help-button luna-mode-help" data-help="zone"
+                  aria-label="Zone mode help" title="Zone mode help">?</button>
               </div>
             </div>
 
@@ -463,7 +499,8 @@
           <div class="panel-body surface_setting">
             <div class="luna-setting-help-row luna-surface-hint">
               <span>Map layers</span>
-              <button type="button" class="luna-help-button" data-help="surface" aria-label="Surface settings help" title="Surface settings help">?</button>
+              <button type="button" class="luna-help-button" data-help="surface" aria-label="Surface settings help"
+                title="Surface settings help">?</button>
             </div>
             <div class="set_list">
               <label class="shadow_layer layer_row">
@@ -511,7 +548,8 @@
     </header>
     <div class="about_team_content">
       <!-- Team mission and member profiles. Initials replace decorative profile icons. -->
-      <p class="about-team-intro">Six space enthusiasts committed to advancing humanity’s sustainable return to the Moon and inspiring a passion for science.</p>
+      <p class="about-team-intro">Six space enthusiasts committed to advancing humanity’s sustainable return to the Moon
+        and inspiring a passion for science.</p>
       <div class="luna-team-grid" aria-label="Six project team members">
         <article class="luna-team-card">
           <div class="luna-team-avatar" aria-hidden="true">AAS</div>
@@ -546,7 +584,8 @@
       </div>
       <div class="luna-team-contact-panel">
         <h3>Team contacts</h3>
-        <a href="mailto:taras08gll@gmail.com">taras08gll@gmail.com</a>
+        <a href="mailto:taras08gll@gmail.com">taras08gll@gmail.com </a>
+        <a href="https://github.com/taras08gll-alt">Taras08X GitHub </a>
         <a href="mailto:hryhorian.hlib_ak51@edu.kpi.ua">hryhorian.hlib_ak51@edu.kpi.ua</a>
       </div>
       <p class="about-team-note">LUNA Spiculum · NASA Space Apps Challenge 2026</p>
@@ -585,8 +624,8 @@
     <!-- LUNA-DOC: Element #analysis-surface is referenced by JavaScript or CSS. -->
     <div class="analysis-dialog__plot" id="analysis-surface" hidden>
       <!-- LUNA-DOC: Element #analysis-surface-viewport is referenced by JavaScript or CSS. -->
-      <div class="analysis-surface__viewport" id="analysis-surface-viewport"
-        role="img" aria-describedby="analysis-surface-readout" title="Drag to rotate. Scroll to zoom."></div>
+      <div class="analysis-surface__viewport" id="analysis-surface-viewport" role="img"
+        aria-describedby="analysis-surface-readout" title="Drag to rotate. Scroll to zoom."></div>
       <div class="analysis-dialog__readout analysis-surface__readout">
         <p id="analysis-surface-readout"></p>
         <!-- LUNA-DOC: Element #analysis-surface-scale is referenced by JavaScript or CSS. -->
